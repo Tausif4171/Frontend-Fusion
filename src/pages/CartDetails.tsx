@@ -2,7 +2,7 @@ import React from 'react'
 
 function CartDetails() {
     return (
-        <div>CartDetails</div>
+        <div className='manrope-font font-bold'>CartDetails</div>
     )
 }
 
