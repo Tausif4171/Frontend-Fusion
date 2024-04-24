@@ -17,13 +17,13 @@ function Header() {
                 </div>
 
                 <div className='mt-[35px]'>
-                    <div className='flex gap-[12px] w-[335px] h-[56px] rounded-[28px] bg-[#153075] py-[19px] px-[28px]'>
+                    <div className='flex gap-[12px] sm:w-[335px] h-[56px] rounded-[28px] bg-[#153075] py-[19px] px-[28px]'>
                         <img src={searchIcon} alt='Search Icon' />
                         <input type='text' placeholder='Search Products or store' className='w-full h-full border-none outline-none bg-[#153075] text-[#8891A5] text-[14px] font-medium leading-[19.12px]' />
                     </div>
                 </div>
 
-                <div className='w-[336px] mt-[29px] flex justify-between'>
+                <div className='sm:w-[336px] mt-[29px] flex justify-between'>
                     <div>
                         <div>
                             <p className='text-[#F8F9FB] text-[11px] font-extrabold leading-[15.03px] opacity-[50%] uppercase'>Delivery to</p>
