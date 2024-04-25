@@ -3,14 +3,17 @@ import emptyImage from '../assets/emptyImage.svg'
 import back from '../assets/back.svg'
 import plusDark from '../assets/plusDark.svg'
 import minusDark from '../assets/minusDark.svg'
+import { Link } from 'react-router-dom'
 
 function CartDetails() {
     return (
         <div className='mt-[45px] mx-[24px]'>
             <div className='flex items-center gap-[21px] mb-[41px]'>
-                <div className='w-[40px] h-[40px] bg-[#F8F9FB] rounded-[50%] flex justify-center items-center'>
-                    <img src={back} />
-                </div>
+                <Link to='/'>
+                    <div className='w-[40px] h-[40px] bg-[#F8F9FB] rounded-[50%] flex justify-center items-center'>
+                        <img src={back} />
+                    </div>
+                </Link>
                 <p className='text-[#1E222B] font-normal text-[16px] leading-6'>Shopping Cart (5)</p>
             </div>
 

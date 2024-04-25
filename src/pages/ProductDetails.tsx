@@ -4,6 +4,7 @@ import bagBlack from '../assets/bagBlack.svg'
 import stars from '../assets/stars.svg'
 import Product from '../interfaces/Product';
 import { Link, useParams } from 'react-router-dom';
+import Cart from '../components/Cart';
 
 interface ProductDetailsProps {
     products: Product[];
@@ -40,12 +41,12 @@ function ProductDetails(props: ProductDetailsProps) {
     return (
         <div className='mt-[45px] mx-[20px]'>
             <div className='flex justify-between '>
-                <Link to={'/'}>
+                <Link to='/'>
                     <div className='w-[40px] h-[40px] bg-[#F8F9FB] rounded-[50%] flex justify-center items-center cursor-pointer'>
                         <img src={back} />
                     </div>
                 </Link>
-                <img src={bagBlack} className=' cursor-pointer' />
+                <Cart />
             </div>
 
             <div className='mt-[21px]'>
@@ -78,9 +79,10 @@ function ProductDetails(props: ProductDetailsProps) {
                 <button className='w-[143px] h-[56px] rounded-[20px] border-[1px] border-solid border-[#2A4BA0] leading-[19.12px] text-[14px] font-semibold text-[#2A4BA0]'>
                     Add To Cart
                 </button>
-                <button className='w-[169px] h-[56px] rounded-[20px] bg-[#2A4BA0] leading-[19.12px] text-[14px] font-semibold text-[#FFFFFF]'>
+                <Link to='/cart-details'><button className='w-[169px] h-[56px] rounded-[20px] bg-[#2A4BA0] leading-[19.12px] text-[14px] font-semibold text-[#FFFFFF]'>
                     Buy Now
                 </button>
+                </Link>
             </div>
 
             <div className='mt-[30px] md:w-[600px]'>

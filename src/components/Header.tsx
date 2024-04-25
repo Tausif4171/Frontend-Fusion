@@ -1,7 +1,7 @@
 import React from 'react'
-import bag from '../assets/bag.svg'
 import searchIcon from '../assets/searchIcon.svg'
 import arrowIcon from '../assets/arrowIcon.svg'
+import Cart from './Cart'
 
 function Header() {
     return (
@@ -11,13 +11,8 @@ function Header() {
                     <div>
                         <h1 className='text-[#F8F9FB] text-[22px] font-semibold leading-[30.05px] '>Hey, Rahul</h1>
                     </div>
-                    <div className='cursor-pointer'>
-                        <div>
-                            <img src={bag} />
-                        </div>
-                        <div className='absolute top-10 right-2 bg-[#F9B023] w-6 h-6 border-[2px] border-solid border-[#2A4BA0] rounded-[50%] text-[#FFFFFF] font-semibold text-[14px] leading-[19.12px] flex justify-center items-center'>
-                            3
-                        </div>
+                    <div>
+                        <Cart />
                     </div>
                 </div>
 
