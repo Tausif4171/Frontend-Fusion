@@ -3,8 +3,15 @@ import emptyImage from '../assets/emptyImage.svg'
 import plus from '../assets/plus.svg'
 import heart from '../assets/heart.svg'
 import heartFilled from '../assets/heartFilled.svg'
+import Product from '../interfaces/Product'
 
-function ProductItem() {
+interface ProductItemProps {
+    product: Product;
+}
+
+function ProductItem(props: ProductItemProps) {
+    const { product } = props;
+
     return (
         <div className='bg-[#F8F9FB] py-5 px-[17px] w-[160px] h-[194px] rounded-xl relative'>
             <div className='absolute top-[13px] left-[13px]'>
