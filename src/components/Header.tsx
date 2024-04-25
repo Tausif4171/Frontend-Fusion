@@ -11,7 +11,7 @@ function Header() {
                     <div>
                         <h1 className='text-[#F8F9FB] text-[22px] font-semibold leading-[30.05px] '>Hey, Rahul</h1>
                     </div>
-                    <div className=' cursor-pointer'>
+                    <div className='cursor-pointer'>
                         <div>
                             <img src={bag} />
                         </div>
