@@ -6,13 +6,18 @@ import arrowIcon from '../assets/arrowIcon.svg'
 function Header() {
     return (
         <div>
-            <div className=' w-[100%] h-auto bg-[#2A4BA0] pt-[52px] px-[20px] pb-[17px] '>
+            <div className='relative w-[100%] h-auto bg-[#2A4BA0] pt-[52px] px-[20px] pb-[17px] '>
                 <div className='flex justify-between items-start w-[100%]'>
                     <div>
                         <h1 className='text-[#F8F9FB] text-[22px] font-semibold leading-[30.05px] '>Hey, Rahul</h1>
                     </div>
-                    <div>
-                        <img src={bag} />
+                    <div className=' cursor-pointer'>
+                        <div>
+                            <img src={bag} />
+                        </div>
+                        <div className='absolute top-10 right-2 bg-[#F9B023] w-6 h-6 border-[2px] border-solid border-[#2A4BA0] rounded-[50%] text-[#FFFFFF] font-semibold text-[14px] leading-[19.12px] flex justify-center items-center'>
+                            3
+                        </div>
                     </div>
                 </div>
 

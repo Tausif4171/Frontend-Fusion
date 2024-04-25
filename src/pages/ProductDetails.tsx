@@ -3,7 +3,7 @@ import back from '../assets/back.svg'
 import bagBlack from '../assets/bagBlack.svg'
 import stars from '../assets/stars.svg'
 import Product from '../interfaces/Product';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 interface ProductDetailsProps {
     products: Product[];
@@ -40,10 +40,12 @@ function ProductDetails(props: ProductDetailsProps) {
     return (
         <div className='mt-[45px] mx-[20px]'>
             <div className='flex justify-between '>
-                <div className='w-[40px] h-[40px] bg-[#F8F9FB] rounded-[50%] flex justify-center items-center'>
-                    <img src={back} />
-                </div>
-                <img src={bagBlack} />
+                <Link to={'/'}>
+                    <div className='w-[40px] h-[40px] bg-[#F8F9FB] rounded-[50%] flex justify-center items-center cursor-pointer'>
+                        <img src={back} />
+                    </div>
+                </Link>
+                <img src={bagBlack} className=' cursor-pointer' />
             </div>
 
             <div className='mt-[21px]'>
