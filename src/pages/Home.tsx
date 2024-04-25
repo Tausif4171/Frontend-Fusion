@@ -2,13 +2,18 @@ import React from 'react'
 import Header from '../components/Header'
 import Discount from '../components/Discount'
 import ProductList from '../components/ProductList'
+import Product from '../interfaces/Product';
 
-function Home() {
+interface HomeProps {
+    products: Product[];
+}
+
+function Home(props: HomeProps) {
     return (
         <div>
             <Header />
             <Discount />
-            <ProductList />
+            <ProductList products={props.products} />
         </div>
     )
 }

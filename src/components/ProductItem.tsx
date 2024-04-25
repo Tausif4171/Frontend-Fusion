@@ -3,6 +3,7 @@ import emptyImage from '../assets/emptyImage.svg';
 import plus from '../assets/plus.svg';
 import heart from '../assets/heart.svg';
 import heartFilled from '../assets/heartFilled.svg';
+import { useNavigate } from 'react-router-dom';
 import Product from '../interfaces/Product';
 
 interface ProductItemProps {
@@ -11,9 +12,14 @@ interface ProductItemProps {
 
 function ProductItem(props: ProductItemProps) {
     const { product } = props;
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate(`/product-details/${product.id}`);
+    };
 
     return (
-        <div className='bg-[#F8F9FB] py-5 px-[17px] w-[160px] h-[194px] rounded-xl relative'>
+        <div className='bg-[#F8F9FB] py-5 px-[17px] w-[160px] h-[194px] rounded-xl relative' onClick={handleClick}>
             <div className='absolute top-[13px] left-[13px]'>
                 <img src={heart} alt="Favorite" />
             </div>
