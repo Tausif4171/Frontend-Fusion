@@ -24,7 +24,7 @@ function ProductItem(props: ProductItemProps) {
                 <img src={heart} alt="Favorite" />
             </div>
             <div className='flex justify-center'>
-                <img className='w-[68px] h-[68px]' src={product.thumbnail || emptyImage} alt="Product" />
+                <img className='w-[68px] h-[68px] object-cover' src={product.thumbnail || emptyImage} alt="Product" />
             </div>
             <div className='flex justify-between mt-[56px]'>
                 <div>
