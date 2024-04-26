@@ -30,7 +30,7 @@ function Header() {
                         </div>
                         <div className='flex gap-[10px] mt-1'>
                             <p className='text-[#F8F9FB] text-[14px] font-medium leading-[19.12px]'>Green Way 3000, Sylhet</p>
-                            <img src={arrowIcon} />
+                            <img className=' cursor-pointer' src={arrowIcon} />
                         </div>
                     </div>
 
@@ -40,7 +40,7 @@ function Header() {
                         </div>
                         <div className='flex gap-[10px] mt-1'>
                             <p className='text-[#F8F9FB] text-[14px] font-medium leading-[19.12px]'>1 Hour</p>
-                            <img src={arrowIcon} />
+                            <img className=' cursor-pointer' src={arrowIcon} />
                         </div>
                     </div>
                 </div>
