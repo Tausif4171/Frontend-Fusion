@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import Product from '../interfaces/Product';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart, selectCartItems } from '../store/cartSlice';
+import { addToFavorites, removeFromFavorites, selectFavorites } from '../store/favoritesSlice';
 
 interface ProductItemProps {
     product: Product;
@@ -16,6 +17,9 @@ function ProductItem(props: ProductItemProps) {
     const { product } = props;
     const navigate = useNavigate();
     const cartItems = useSelector(selectCartItems);
+    const favoriteProducts = useSelector(selectFavorites);
+    // Check if the product is in favorites
+    const productIsFavorite = favoriteProducts.some((favProduct: Product) => favProduct.id === product.id);
 
     const handleClick = () => {
         navigate(`/product-details/${product.id}`);
@@ -29,11 +33,15 @@ function ProductItem(props: ProductItemProps) {
 
         // Perform action based on the provided action parameter
         if (action === 'heart') {
-            // Add your logic for heart click here
+            if (productIsFavorite) {
+                dispatch(removeFromFavorites(product));
+            } else {
+                dispatch(addToFavorites(product));
+            }
         } else if (action === 'plus') {
             const isInCart = cartItems.some((item: Product) => item.id === product.id);
             if (!isInCart) {
-            // If not in cart, add the product
+                // If not in cart, add the product
                 dispatch(addToCart(product));
             } else {
                 // If already in cart, show a message or perform some other action
@@ -42,11 +50,14 @@ function ProductItem(props: ProductItemProps) {
         }
     };
 
+
+
     return (
         <div className='bg-[#F8F9FB] py-5 px-[17px] cursor-pointer w-[160px] h-[194px] rounded-xl relative' onClick={handleClick}>
             <div className='absolute top-[13px] left-[13px] cursor-pointer' onClick={(e) => handleIconClick(e, 'heart')}>
-                <img src={heart} alt="Favorite" />
+                <img src={productIsFavorite ? heartFilled : heart} alt="Favorite" />
             </div>
+
             <div className='flex justify-center'>
                 <img className='w-[68px] h-[68px] object-cover' src={product.thumbnail || emptyImage} alt="Product" />
             </div>
