@@ -5,8 +5,8 @@ import heart from '../assets/heart.svg';
 import heartFilled from '../assets/heartFilled.svg';
 import { useNavigate } from 'react-router-dom';
 import Product from '../interfaces/Product';
-import { useDispatch } from 'react-redux';
-import { addToCart } from '../store/cartSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart, selectCartItems } from '../store/cartSlice';
 
 interface ProductItemProps {
     product: Product;
@@ -15,6 +15,7 @@ interface ProductItemProps {
 function ProductItem(props: ProductItemProps) {
     const { product } = props;
     const navigate = useNavigate();
+    const cartItems = useSelector(selectCartItems);
 
     const handleClick = () => {
         navigate(`/product-details/${product.id}`);
@@ -30,7 +31,14 @@ function ProductItem(props: ProductItemProps) {
         if (action === 'heart') {
             // Add your logic for heart click here
         } else if (action === 'plus') {
-            dispatch(addToCart(product));
+            const isInCart = cartItems.some((item: Product) => item.id === product.id);
+            if (!isInCart) {
+            // If not in cart, add the product
+                dispatch(addToCart(product));
+            } else {
+                // If already in cart, show a message or perform some other action
+                console.log('Product is already in the cart');
+            }
         }
     };
 
