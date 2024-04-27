@@ -17,13 +17,10 @@ function Home(props: HomeProps) {
             setIsMobile(window.innerWidth <= 641);
         };
 
-        // Add event listener for window resize
         window.addEventListener('resize', handleResize);
 
-        // Initial check on component mount
         handleResize();
 
-        // Remove event listener on component unmount
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 

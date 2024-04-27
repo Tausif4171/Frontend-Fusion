@@ -5,7 +5,7 @@ import Cart from './Cart'
 
 function Header() {
     return (
-        <div>
+
             <div className='relative w-[100%] h-auto bg-[#2A4BA0] pt-[52px] px-[20px] pb-[17px] '>
                 <div className='flex justify-between items-center w-[100%]'>
                     <div>
@@ -47,7 +47,7 @@ function Header() {
 
 
             </div>
-        </div>
+
     )
 }
 

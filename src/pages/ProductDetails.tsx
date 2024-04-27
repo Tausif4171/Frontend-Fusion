@@ -118,9 +118,9 @@ function ProductDetails(props: ProductDetailsProps) {
                 <p className='text-[#2A4BA0] text-[16px] font-bold leading-6'>
                     ${filteredProduct?.price}
                 </p>
-                <button className='w-[84px] h-[24px] bg-[#2A4BA0] rounded-[70px] py-[4px] px-[10px] font-normal text-[12px] leading-4 text-[#FAFBFD]'>
+                <p className='w-[84px] h-[24px] bg-[#2A4BA0] flex justify-center items-center rounded-[70px] py-[4px] px-[10px] font-normal text-[12px] leading-4 text-[#FAFBFD]'>
                     ${discount} OFF
-                </button>
+                </p>
             </div>
 
             <div className='flex gap-[23px] mt-[30px] mx-[20px]'>

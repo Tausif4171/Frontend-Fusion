@@ -61,11 +61,11 @@ function CartDetails() {
                                         </div>
                                     </div>
                                     <div className='flex items-center w-[110px]'>
-                                        <div className='w-[40px] h-[40px] bg-[#F8F9FB] rounded-[50%] flex justify-center items-center' onClick={() => handleDecreaseQuantity(item.id)}>
+                                        <div className='w-[40px] h-[40px] cursor-pointer bg-[#F8F9FB] rounded-[50%] flex justify-center items-center' onClick={() => handleDecreaseQuantity(item.id)}>
                                             <img src={minusDark} alt="Decrease Quantity" />
                                         </div>
                                         <p className='text-[#1E222B] font-medium text-[14px] leading-[19.12px] w-[30px] text-center'>{item.quantity}</p>
-                                        <div className='w-[40px] h-[40px] bg-[#F8F9FB] rounded-[50%] flex justify-center items-center' onClick={() => handleIncreaseQuantity(item.id)}>
+                                        <div className='w-[40px] h-[40px] cursor-pointer bg-[#F8F9FB] rounded-[50%] flex justify-center items-center' onClick={() => handleIncreaseQuantity(item.id)}>
                                             <img src={plusDark} alt="Increase Quantity" />
                                         </div>
                                     </div>
@@ -74,9 +74,10 @@ function CartDetails() {
                         ))}
                         </div>
                 )}
+                {cartItems.length === 0 ? "" : (
                 <div className='flex justify-end mt-[10px]'>
                     <p className='text-[#2A4BA0] font-medium text-[12px] leading-4'>Edit</p>
-                </div>
+                    </div>)}
             </div>
 
 
