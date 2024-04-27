@@ -28,7 +28,7 @@ export const Carousel = ({ product, productIsFavorite, handleIconClick }: Carous
                         src={item}
                         alt={item}
                         key={idx}
-                        className={slide === idx ? "slide object-fill" : "slide slide-hidden"}
+                        className={slide === idx ? "slide object-contain" : "slide slide-hidden"}
                     />
                 );
             })}

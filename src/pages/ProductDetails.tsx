@@ -75,6 +75,14 @@ function ProductDetails(props: ProductDetailsProps) {
         }
     };
 
+    const getRandomDiscount = () => {
+        // Generate a random number between 10 and 50 for example
+        return Math.floor(Math.random() * (50 - 10 + 1)) + 10; // Adjust the range as needed
+    };
+
+    const discount = getRandomDiscount();
+
+
     return (
         <div className='my-[45px]'>
             <div className='flex justify-between items-center mx-[20px]'>
@@ -88,9 +96,12 @@ function ProductDetails(props: ProductDetailsProps) {
 
             <div className='mt-[21px] mx-[20px]'>
                 <p className='text-[50px] text-[#1E222B] leading-[62.55px] font-light'>
-                    {filteredProduct?.title} <span className=' font-extrabold'>{filteredProduct?.title}</span>
+                    {filteredProduct?.title.split(' ').map((word, index, array) => (
+                        index === array.length - 1 ? <span className='font-extrabold' key={index}>{word}</span> : word + ' '
+                    ))}
                 </p>
             </div>
+
 
             <div className='flex gap-[5px] mt-[15px] mx-[20px]'>
                 <img src={stars} alt='' />
@@ -105,10 +116,10 @@ function ProductDetails(props: ProductDetailsProps) {
 
             <div className='flex gap-[14px] mt-[26px] mx-[20px]'>
                 <p className='text-[#2A4BA0] text-[16px] font-bold leading-6'>
-                    ${filteredProduct?.price}<span className='font-normal'>/KG</span>
+                    ${filteredProduct?.price}
                 </p>
                 <button className='w-[84px] h-[24px] bg-[#2A4BA0] rounded-[70px] py-[4px] px-[10px] font-normal text-[12px] leading-4 text-[#FAFBFD]'>
-                    ${filteredProduct?.price} OFF
+                    ${discount} OFF
                 </button>
             </div>
 
