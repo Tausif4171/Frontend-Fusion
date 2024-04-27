@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import logo from './logo.svg';
 import './App.css';
 import Home from './pages/Home';
 import ProductDetails from './pages/ProductDetails';
 import CartDetails from './pages/CartDetails';
 import Product from './interfaces/Product'
-import BottomMenu from './components/BottomMenu';
 
 export default function App() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -29,7 +27,6 @@ export default function App() {
   return (
     <Router>
       <div className='manrope-font'>
-        {/* <BottomMenu /> */}
         <Routes>
           <Route path="/" element={<Home products={products} />} />
           <Route path="/product-details/:id" element={<ProductDetails products={products} />} />
