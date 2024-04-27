@@ -5,6 +5,8 @@ import heart from '../assets/heart.svg';
 import heartFilled from '../assets/heartFilled.svg';
 import { useNavigate } from 'react-router-dom';
 import Product from '../interfaces/Product';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../store/cartSlice';
 
 interface ProductItemProps {
     product: Product;
@@ -16,6 +18,12 @@ function ProductItem(props: ProductItemProps) {
 
     const handleClick = () => {
         navigate(`/product-details/${product.id}`);
+    };
+
+    const dispatch = useDispatch();
+
+    const add = () => {
+        dispatch(addToCart(product));
     };
 
     return (
@@ -31,7 +39,7 @@ function ProductItem(props: ProductItemProps) {
                     <p className='text-[#1E222B] font-semibold text-[14px] leading-5'>${product.price}</p>
                     <p className='text-[#616A7D] font-normal text-[12px] leading-4 w-[102px] truncate'>{product.title}</p>
                 </div>
-                <div className='bg-[#2A4BA0] w-6 h-6 flex justify-center items-center rounded-[50%] cursor-pointer '>
+                <div className='bg-[#2A4BA0] w-6 h-6 flex justify-center items-center rounded-[50%] cursor-pointer ' onClick={add}>
                     <img src={plus} alt="Add to Cart" />
                 </div>
             </div>
