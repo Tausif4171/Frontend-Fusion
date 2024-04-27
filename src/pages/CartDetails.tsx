@@ -37,7 +37,7 @@ function CartDetails() {
                         <img src={back} alt='' />
                     </div>
                 </Link>
-                <p className='text-[#1E222B] font-normal text-[16px] leading-6'>Shopping Cart (5)</p>
+                <p className='text-[#1E222B] font-normal text-[16px] leading-6'>Shopping Cart ({cartItems.length})</p>
             </div>
 
             <div className='sm:w-[500px] mx-[24px]'>
