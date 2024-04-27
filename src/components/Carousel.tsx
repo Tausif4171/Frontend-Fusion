@@ -1,7 +1,14 @@
 import React, { useState } from "react";
+import heart from '../assets/heart.svg'
+import heartFilled from '../assets/heartFilled.svg';
 
+interface CarouselProps {
+    product: any;
+    productIsFavorite: boolean;
+    handleIconClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, action: string) => void;
+}
 
-export const Carousel = ({ product }: any) => {
+export const Carousel = ({ product, productIsFavorite, handleIconClick }: CarouselProps) => {
     const [slide, setSlide] = useState(0);
 
     const nextSlide = () => {
@@ -30,9 +37,9 @@ export const Carousel = ({ product }: any) => {
                 className="arrow arrow-right"
             ></p>
 
-            <div className="absolute top-[14px] right-[35px] w-[58px] h-[58px] bg-[#FFFFFF] rounded-[20px] flex justify-center items-center">
-                test
-            </div>
+            <button onClick={(e) => handleIconClick(e, 'heart')} className="absolute top-[14px] right-[35px] w-[58px] h-[58px] bg-[#FFFFFF] rounded-[20px] flex justify-center items-center">
+                <img className="w-[19px] h-[18px]" src={productIsFavorite ? heartFilled : heart} alt="Favorite" />
+            </button>
 
             <span className="indicators">
                 {product.map((_: string, idx: number) => {
