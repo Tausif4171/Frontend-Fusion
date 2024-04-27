@@ -40,7 +40,7 @@ function ProductDetails(props: ProductDetailsProps) {
 
     return (
         <div className='mt-[45px] mx-[20px]'>
-            <div className='flex justify-between '>
+            <div className='flex justify-between items-center'>
                 <Link to='/'>
                     <div className='w-[40px] h-[40px] bg-[#F8F9FB] rounded-[50%] flex justify-center items-center cursor-pointer'>
                         <img src={back} />

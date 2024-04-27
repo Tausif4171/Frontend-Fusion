@@ -7,7 +7,7 @@ function Header() {
     return (
         <div>
             <div className='relative w-[100%] h-auto bg-[#2A4BA0] pt-[52px] px-[20px] pb-[17px] '>
-                <div className='flex justify-between items-start w-[100%]'>
+                <div className='flex justify-between items-center w-[100%]'>
                     <div>
                         <h1 className='text-[#F8F9FB] text-[22px] font-semibold leading-[30.05px] '>Hey, Rahul</h1>
                     </div>

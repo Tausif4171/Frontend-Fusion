@@ -29,7 +29,7 @@ export default function App() {
   return (
     <Router>
       <div>
-        <BottomMenu />
+        {/* <BottomMenu /> */}
         <Routes>
           <Route path="/" element={<Home products={products} />} />
           <Route path="/product-details/:id" element={<ProductDetails products={products} />} />
