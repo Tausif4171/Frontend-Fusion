@@ -10,5 +10,5 @@ export default interface Product {
     category: string;
     thumbnail: string;
     images: string[];
-    quantity: number; // Add the quantity property
+    quantity: number;
 }

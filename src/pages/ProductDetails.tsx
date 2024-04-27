@@ -77,7 +77,7 @@ function ProductDetails(props: ProductDetailsProps) {
 
     const getRandomDiscount = () => {
         // Generate a random number between 10 and 50 for example
-        return Math.floor(Math.random() * (50 - 10 + 1)) + 10; // Adjust the range as needed
+        return Math.floor(Math.random() * (50 - 10 + 1)) + 10;
     };
 
     const discount = getRandomDiscount();

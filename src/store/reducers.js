@@ -4,7 +4,7 @@ import favoritesReducer from './favoritesSlice';
 
 const rootReducer = combineReducers({
     cart: cartReducer,
-    favorites: favoritesReducer, // Ensure favorites reducer is included
+    favorites: favoritesReducer,
 });
 
 export default rootReducer;

@@ -28,7 +28,7 @@ export default function App() {
   }, []);
   return (
     <Router>
-      <div>
+      <div className='manrope-font'>
         {/* <BottomMenu /> */}
         <Routes>
           <Route path="/" element={<Home products={products} />} />
