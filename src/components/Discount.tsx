@@ -6,7 +6,7 @@ function Discount() {
         <div className='my-[27px] mx-[20px]'>
             <div className='flex justify-between px-[22px] items-center bg-[#F9B023] w-[269px] h-[123px] rounded-[18px]'>
                 <div>
-                    <img src={emptyInWhite} />
+                    <img src={emptyInWhite} alt='' />
                 </div>
                 <div className='text-[#FFFFFF]'>
                     <p className='font-light text-[20px] leading-[27.32px]'>Get</p>

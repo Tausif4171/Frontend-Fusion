@@ -5,16 +5,12 @@ import plusDark from '../assets/plusDark.svg';
 import minusDark from '../assets/minusDark.svg';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectCartItems, removeFromCart, increaseQuantity, decreaseQuantity } from '../store/cartSlice';
+import { selectCartItems, increaseQuantity, decreaseQuantity } from '../store/cartSlice';
 import Product from '../interfaces/Product';
 
 function CartDetails() {
     const cartItems = useSelector(selectCartItems);
     const dispatch = useDispatch();
-
-    const handleRemoveItem = (productId: number) => {
-        dispatch(removeFromCart({ id: productId }));
-    };
 
     const handleIncreaseQuantity = (productId: number) => {
         dispatch(increaseQuantity({ id: productId }));
@@ -38,7 +34,7 @@ function CartDetails() {
             <div className='flex items-center gap-[21px] mb-[41px] mx-[24px]'>
                 <Link to='/'>
                     <div className='w-[40px] h-[40px] bg-[#F8F9FB] rounded-[50%] flex justify-center items-center'>
-                        <img src={back} />
+                        <img src={back} alt='' />
                     </div>
                 </Link>
                 <p className='text-[#1E222B] font-normal text-[16px] leading-6'>Shopping Cart (5)</p>
