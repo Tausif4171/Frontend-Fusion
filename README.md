@@ -13,7 +13,7 @@ Follow these steps to run the project locally:
 
 1. Clone this repository to your local machine.
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Tausif4171/Frontend-Fusion.git
    
 2. cd project-directory
   
